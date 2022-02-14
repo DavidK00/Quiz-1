@@ -61,7 +61,7 @@ processed_reader = csv.reader(students, delimiter = ',')
 next(processed_reader)
 for row in processed_reader:
     student_dict['Student_ID'].append(row[0])
-    student_dict = row[8]    
+
     
     
 
@@ -73,7 +73,7 @@ for row in processed_reader:
 print(student_dict)
 
 #Print the student id 
-print(student_dict)
+print(student_dict[5])
 
 #print out the corresponding GPA from the dictionary
 print(student_dict)
