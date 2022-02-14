@@ -21,6 +21,9 @@ through the logic of the problem.
 
 
 import csv
+from multiprocessing.dummy import Value
+
+from numpy import append
 
 
 # create a file object to open the file in read mode
@@ -38,15 +41,14 @@ outfile = open('processedStudents.csv', 'w')
 
 
 #create a new dictionary named 'student_dict'
-student_dict = {}
+student_dict = {'Student_ID': []}
 
 
 #use a loop to iterate through each row of the file
-
     #check if the GPA is below 3.0. If so, write the record to the outfile
-for row in students:
-    if int(row[8]) <= 3.0:
-        outfile.write(row)
+for row in reader:
+    if float(row[8]) < 3.0:
+        outfile.write(str(row) + '\n')
         
       
 
@@ -54,24 +56,31 @@ for row in students:
 
     # append the record to the dictionary with the student id as the Key
     # and the value as the GPA
-process
+students = open('students.csv', 'r')
+processed_reader = csv.reader(students, delimiter = ',')
+next(processed_reader)
+for row in processed_reader:
+    student_dict['Student_ID'].append(row[0])
+    student_dict = row[8]    
+    
+    
 
 
 
 
 
 #print the entire dictionary
-
+print(student_dict)
 
 #Print the student id 
-
+print(student_dict)
 
 #print out the corresponding GPA from the dictionary
-
+print(student_dict)
 
 
 #close the outfile
-
+outfile.close()
 
 
 
